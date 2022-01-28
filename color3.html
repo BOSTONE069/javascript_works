@@ -7,15 +7,11 @@
     <title>colors</title>
     <script>
         //this code runs once the DOM is loaded in the webpage
-       document.addEventListener('DOMContentLoaded', function() {
+       document.addEventListener('DOMContentLoaded', () =>  { //arrow notation is a short fuction for creating a function
            
         
         //change the font color of the various elements in the int button 
-          document.querySelectorAll('button').forEach(function(button){
-              button.onclick = function(){ // this fuction runs when the button is clicked on
-                document.querySelector('#hello').style.color = button.dataset.color;
-              }
-          });
+          document.querySelectorAll('select').onchange
         
 
        });
@@ -24,8 +20,11 @@
 </head>
 <body>
     <h1 id="hello">Hello!</h1>
-    <button data-color="red">Red</button>
-    <button data-color="blue">Blue</button>
-    <button data-color="green" >Green</button>
+    <select>
+        <option value="black">Black</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+    </select>
 </body>
 </html>
