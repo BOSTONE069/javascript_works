@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () { //this allows the code to run after the page is loaded
+            
+            //By default the submit button should be disabled
+            document.querySelector('#submit').disabled = true; 
+             
+            // this is for enabling the submit button when the user starts to type on the input field
+            document.querySelector('#task').onkeyup = () => {
+                if (document.querySelector('#task').value.length >0){ //the condition is for checking the elements typed in the input field
+                    document.querySelector('#submit').disabled = false;
+
+                } else {
+                    document.querySelector('#submit').disabled = true;
+                }
+                
+            }
+
+            document.querySelector('form').onsubmit = () => { // this determines how the page is behaving once it has been clicked
+                const task = document.querySelector('#task').value;
+                
+                const li = document.createElement('li');
+                li.innerHTML = task;
+
+                document.querySelector('#tasks').append(li);
+
+                document.querySelector('#task').value = ''; // this is for clearing the input after the submission is done successfully
+                document.querySelector('#submit').disabled = true;
+
+                //Stop form from submitting
+                return false;
+            }
+            
+        });
+    </script>
+    <style>
+        body{
+            background-color: deeppink;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tasks</h1>
+    <ul id="tasks">
+
+    </ul>
+
+    <form >
+        <label >New Task</label>
+        <input type="text" name="New Task" id="task" placeholder="New Task">
+        <input type="submit" id="submit">
+    </form>
+</body>
+</html>

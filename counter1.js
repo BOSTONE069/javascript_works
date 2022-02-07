@@ -16,7 +16,8 @@ function count() {
 }
 //This event listener object is to enable the loading of the whole and listen to the query select of the button
 document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('h1').innerHTML = localStorage.getItem('counter'); //This is for updating the counter value to correct one 
     document.querySelector('button').onclick = count; 
     
-    setInterval(count, 1000) //this is a counter for the numbers automatically
+
 });

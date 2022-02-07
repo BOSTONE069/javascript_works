@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () { //this allows the code to run after the page is loaded
+            document.querySelector('form').onsubmit = () => { // this determines how the page is behaving once it has been clicked
+                const task = document.querySelector('#task').value;
+                console.log(task); // this gives log element into the code
+
+                //Stop form from submitting
+                return false;
+            }
+            
+        });
+    </script>
+    <style>
+        body{
+            background-color: deeppink;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tasks<onyango/h1>
+    <ul id="tasks">
+
+    </ul>
+
+    <form >
+        <label >New Task</label>
+        <input type="text" name="New Task" id="task" placeholder="New Task">
+        <input type="submit">
+    </form>
+</body>
+</html>

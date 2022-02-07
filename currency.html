@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURRENCY EXCHANGE RATES</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            fetch('https://api.exchangeratesapi.io/latest?base=USD') //the fetch feature is used to import another API into the page using the link below
+            .then(response => response.json()) //This is for converting the fetched response into json file
+            .then(data => {
+                const rate = data.rates.EUR;
+                document.qu
+                console.log(data); //This is to log out the data that has been converted into json 
+            });
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
